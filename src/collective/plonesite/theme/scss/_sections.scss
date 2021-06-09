@@ -1,0 +1,28 @@
+.navbar-search {
+
+  input {
+    width: 210px;
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid $primary;
+    color: #fff;
+  }
+
+  input:focus::placeholder {
+    color: transparent;
+  }
+
+  button {
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid $primary;
+    color: #fff;
+    padding: 0.375rem 0.75rem 0.5rem 0.75rem;
+  }
+
+  input::placeholder {
+    color: #fff;
+  }
+
+  .search-icon {
+    color: #fff;
+  }
+}

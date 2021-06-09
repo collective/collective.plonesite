@@ -1,0 +1,39 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs; icons python:context.restrictedTraverse('@@iconresolver');"
+     i18n:domain="plone">
+
+<div class="bg-primary">
+
+  <div class="container">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+
+      <a class="navbar-brand" href="${context/portal_url}" class="mr-2">
+        <img src="++plone++collective.plonesite/plone-logo-white.svg" width="150" alt="Plone" />
+      </a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" tal:repeat="item portal_tabs">
+            <a class="nav-link" href="${item/url}">${item/name}</a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="navbar-search d-none d-lg-flex" action="${context/portal_url}/@@search">
+        <input class="form-control" id="site-search" type="search" name="SearchableText" value="" placeholder="Search Site" i18n:attributes="placeholder title_search_site" tal:attributes="value request/form/SearchableText|nothing;">
+        <button class="btn btn-outline-light" type="submit">
+          <tal:icon tal:replace="structure python:icons.tag('search', tag_class='search-icon', tag_alt='SEO')" />
+        </button>
+      </form>
+
+    </nav>
+
+  </div>
+
+</div>
+
+</tal:sections>

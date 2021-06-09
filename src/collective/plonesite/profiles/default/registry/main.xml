@@ -11,4 +11,7 @@
     <value key="last_compilation">2021-06-09 12:00:00</value>
   </records>
 
+  <records remove="true" interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/plonede-bundle">
+  </records>
+
 </registry>
