@@ -1,1 +1,2 @@
--c constraints_plone52.txt
+# keep Plone version in sync with buildout.cfg
+-r https://dist.plone.org/release/5.2-latest/requirements.txt
