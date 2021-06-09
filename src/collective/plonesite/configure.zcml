@@ -7,12 +7,6 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <!--
-    Be careful if you use general includeDependencies, it can have side effects!
-    Better import explicit packages or configurations ;)
-  -->
-  <!--<includeDependencies package="." />-->
-
   <include package=".browser" />
 
   <include file="permissions.zcml" />
@@ -40,6 +34,10 @@
       name="collective.plonesite-hiddenprofiles"
       />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <plone:static
+      directory="theme"
+      type="theme"
+      name="collective.plonesite"
+      />
 
 </configure>

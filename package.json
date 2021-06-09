@@ -1,0 +1,45 @@
+{
+  "name": "collective.plonesite",
+  "version": "0.1.0",
+  "description": "An add-on for Plone",
+  "main": "index.js",
+  "author": "Stefan Antonelli",
+  "license": "MIT",
+  "homepage": "https://github.com/collective/collective.plonesite/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collective/collective.plonesite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/collective/collective.plonesite/issues"
+  },
+  "keywords": [
+    "plone",
+    "theme"
+  ],
+  "dependencies": {
+    "bootstrap": "5.0.1"
+  },
+  "scripts": {
+    "css": "npm-run-all css-compile-main css-prefix-main css-minify-main",
+    "css-lint": "stylelint \"src/collective/plonesite/theme/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/collective/plonesite/theme/scss/ -o src/collective/plonesite/theme/css/",
+    "css-minify-main": "cleancss --format breakWith=lf --source-map --source-map-inline-sources --output src/collective/plonesite/theme/css/plonesite.min.css src/collective/plonesite/theme/css/plonesite.css",
+    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"src/collective/plonesite/theme/css/*.css\" \"!src/collective/plonesite/theme/css/*.min.css\"",
+    "js": "npm-run-all js-compile-main",
+    "js-compile-main": "uglifyjs src/collective/plonesite/theme/js/plonesite.js --compress --mangle --output src/collective/plonesite/theme/js/plonesite.min.js",
+    "lint": "npm-run-all --parallel css-lint",
+    "dist": "npm-run-all --parallel css js",
+    "watch": "nodemon --watch src/collective/plonesite/theme/scss/ --ext scss --exec \"npm run css\""
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.3.0",
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "stylelint": "^13.13.1",
+    "uglify-js": "^3.13.9"
+  }
+}

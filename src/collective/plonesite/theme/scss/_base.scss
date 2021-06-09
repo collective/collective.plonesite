@@ -1,0 +1,84 @@
+// Basic Styling
+
+html {
+
+  body {
+
+    #portal-header {
+      margin: 1.75em 0 2em 0;
+    }
+
+    #portal-mainnavigation {
+      margin-bottom: 2em;
+
+      #navbar-search {
+        display: none;
+      }
+    
+      #site-search {
+        width: 200px;
+      }
+
+    }
+
+    .breadcrumb {
+      padding: 0;
+      margin-bottom: 2em;
+      background-color: transparent;
+    }    
+
+    #global-statusmessage {
+      margin-bottom: 2em;
+    }
+
+    #content {
+      margin-bottom: 2em;
+
+      #section-byline {
+        margin-bottom: 1em;
+      }
+
+      #section-text {
+        margin-bottom: 2em;
+      }
+
+      #section-contributors {
+        margin-bottom: 2em;
+      }
+
+      #section-rights {
+        margin-bottom: 2em;
+      }
+
+      #content-core {
+        .autotoc-nav {
+          margin: 1em 0;
+        }
+      }
+    }
+
+    .portlet {
+      margin-bottom: 1em;
+
+      .card-body ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+          margin-bottom: 0.5em;
+        }
+
+      }
+
+    }    
+
+  }
+
+}
+
+@include media-breakpoint-up(sm) {
+  #xavbar-search {
+    display: flex;
+  }
+}

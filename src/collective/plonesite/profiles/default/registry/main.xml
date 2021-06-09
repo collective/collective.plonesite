@@ -3,6 +3,12 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="collective.plonesite">
 
-<!-- -*- extra stuff goes here -*- -->
+  <records interface="Products.CMFPlone.interfaces.IBundleRegistry" prefix="plone.bundles/plonesite">
+    <value key="jscompilation">++theme++collective.plonesite/js/plonesite.min.js</value>
+    <value key="csscompilation">++theme++collective.plonesite/css/plonesite.min.css</value>
+    <value key="enabled">True</value>
+    <value key="compile">False</value>
+    <value key="last_compilation">2021-06-09 12:00:00</value>
+  </records>
 
 </registry>
