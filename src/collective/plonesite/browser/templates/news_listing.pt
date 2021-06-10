@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+   metal:use-macro="context/main_template/macros/master"
+   i18n:domain="operun.website">
+
+<body>
+<metal:content-core fill-slot="main">
+
+  <article>
+    <section>
+      <h1 class="text-center" tal:content="context/title|nothing" />
+      <p class="lead text-center" tal:content="context/description|nothing" />
+    </section>
+  </article>
+
+  <div class="col-md-10 offset-md-1">
+
+  <section>
+    <div class="row mb-5" tal:repeat="item view/get_items">
+
+      <div class="col-md-4 mb-3 order-md-2">
+        <img src="${item/image}" class="img-fluid" alt="${item/title}" />
+      </div>
+
+      <div class="col-md-8 mb-3 order-md-1">
+        <h2 class="mt-0 mb-3">${item/title}</h2>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <tal:icon tal:replace="structure python:icons.tag('calendar-date', tag_class='icon-inline', tag_alt='Inhalte')" /> ${item/date}
+          </li>
+        </ul>
+        <p>${item/description}</p>
+        <a class="btn btn-outline-primary" href="${item/url}" i18n:translate="show_more">Show more</a>
+      </div>
+
+    </div>
+  </section>
+
+  </div>
+
+  <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+</metal:content-core>
+</body>
+
+</html>

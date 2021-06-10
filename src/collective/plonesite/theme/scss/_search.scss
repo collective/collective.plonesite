@@ -1,0 +1,31 @@
+// Search related styling
+
+#searchform {
+
+  .input-group {
+    margin: 3rem 0;
+  }
+
+  #rss-subscription {
+    display: none;
+  }
+
+  ul.nav {
+    display: none;
+  }
+
+  #search-results {
+
+    ol.searchResults {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.5em;
+      }
+
+    }
+
+  }
+
+}

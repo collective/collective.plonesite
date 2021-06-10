@@ -26,4 +26,19 @@
       layer="collective.plonesite.interfaces.ICollectivePlonesiteLayer"
       />
 
+  <browser:page
+      name="frontpage"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      class=".frontpage.FrontPageView"
+      permission="zope2.View"
+      layer="collective.plonesite.interfaces.ICollectivePlonesiteLayer"
+      />
+
+  <browser:page
+      name="newslisting"
+      for="*"
+      class=".news.NewsListingView"
+      permission="zope2.View"
+      />
+
 </configure>
